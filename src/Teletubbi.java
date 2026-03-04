@@ -42,4 +42,16 @@ public class Teletubbi {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String toString() {
+    StringBuilder sb = new StringBuilder("Teletubbi {");
+
+    sb.append(String.format(" id: %d, ", this.id));
+    sb.append(String.format(" nombre: %s, ", this.nombre));
+    sb.append(String.format(" color: %s, ", this.color));
+    sb.append(String.format(" nivel de abrazos: %d, ", this.nivelAbrazos));
+    sb.append("}");
+
+    return sb.toString();
+    }
 }
