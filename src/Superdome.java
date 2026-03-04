@@ -36,5 +36,20 @@ public class Superdome {
         return teletubbiBusacado;
     }
 
+    /**
+     * Busca el primer hueco libre en el array teletubbies
+     * @return -1 si no ha encontrado hueco libre o la posición del hueco libre
+     */
+    private int buscarPrimerHuecoLibre(){
+        int posicionPrimerHuecoLibre = -1;
+        boolean seguirBuscando = true;
 
+        for( int i = 0; i < NUM_MAX_TELETUBBIES; i++){
+            if( teletubbies[i] == null){
+                posicionPrimerHuecoLibre = i;
+                seguirBuscando = false;
+            }
+        }
+        return posicionPrimerHuecoLibre;
+    }
 }
