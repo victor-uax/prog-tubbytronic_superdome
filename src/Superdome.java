@@ -52,4 +52,22 @@ public class Superdome {
         }
         return posicionPrimerHuecoLibre;
     }
+
+    /**
+     * Busca el primer hueco libre, en caso de haberlo, busca si está repetido el Teletubbi t, y si no está repetido inserta el Teletubbi t en la posición libre
+     * @param t
+     * @return true si ha podido ser registrado correctamente o false si no ha podido ser registrado
+     */
+    public boolean registrarTeletubbi(Teletubbi t){
+        boolean teletubbiRegistrado = false;
+        int huecoLibre = buscarPrimerHuecoLibre();
+
+        if( huecoLibre != -1 ){
+            if( buscarTeletubbi(t.getId()) == null ){
+                teletubbies[huecoLibre] = t;
+                teletubbiRegistrado = true;
+            }
+        }
+        return teletubbiRegistrado;
+    }
 }
